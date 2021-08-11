@@ -8,12 +8,19 @@
 
     function MyController($scope) {
         $scope.LunchCheckController = function() {
-            var lunchesArray = $scope.lunches.split(",");
-            if (lunchesArray.length <= 3) {
-                $scope.displayMessage = "Enjoy!";
+            $scope.displayMessage = "";
+            if ($scope.lunches == undefined) {
+                $scope.displayMessage = "Please enter data first!";
             } else {
-                $scope.displayMessage = "Too much!";
+                var lunchesArray = $scope.lunches.split(",");
+                if (lunchesArray.length <= 3) {
+                    $scope.displayMessage = "Enjoy!";
+                } else {
+                    $scope.displayMessage = "Too much!";
+                }
             }
         }
+
+
     }
 })();
