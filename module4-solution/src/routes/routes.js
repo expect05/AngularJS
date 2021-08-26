@@ -20,14 +20,26 @@
             templateUrl: 'src/templates/home.template.html'
         })
 
-        // Premade list page
+        // Premade categories page
         .state('mainList', {
             url: '/mainList',
             templateUrl: 'src/templates/main-categories.template.html',
-            controllerAs: 'CategoriesController as mainList',
+            controller: 'CategoriesController as mainList',
             resolve: {
                 categories: ['MenuDataService', function(MenuDataService) {
                     return MenuDataService.getAllCategories();
+                }]
+            }
+        })
+
+        //Items page
+        .state('items', {
+            url: '/items/{categoryID}',
+            templateUrl: '/src/templates/main-items.template.html',
+            controller: 'ItemsController as mainList',
+            resolve: {
+                items: ['$stateParams', 'MenuDataService', function($stateParams, MenuDataService) {
+                    return MenuDataService.getItemsForCategory($stateParams.categoryID);
                 }]
             }
         });

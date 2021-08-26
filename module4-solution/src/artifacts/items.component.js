@@ -1,8 +1,8 @@
 (function() {
     'use strict';
 
-    angular.module('Data')
-        .component('items', {
+    angular.module('MenuApp')
+        .component('itemsView', {
             templateUrl: 'src/templates/items.template.html',
             bindings: {
                 items: '<'
