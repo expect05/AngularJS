@@ -18,12 +18,10 @@
             });
             result.then(function(response) {
                     deferred.resolve(response.data);
-                    console.log(deferred);
                 })
                 .catch(function(error) {
                     console.log("Something went wrong getting all categories");
                 });
-            console.log(deferred.promise);
             return deferred.promise;
         };
 
@@ -37,8 +35,6 @@
             });
             result.then(function(response) {
                     deferred.resolve(response.data);
-                    //itemsForCategory.push(response.data);
-                    console.log(deferred);
                 })
                 .catch(function(error) {
                     console.log("Something went wrong getting items for category");
