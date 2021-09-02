@@ -1,0 +1,37 @@
+<h1>My Info</h1>
+<legend class="sign_up"> My account </legend>
+<div ng-if="infCtrl.noAccount == true">Not signed up yet.
+    <a ui-sref="public.sign_up">Sign Up Now!</a>
+</div>
+<table ng-if="infCtrl.noAccount == false" class="table">
+    <tr>
+        <td>First name:</td>
+        <td>{{ infCtrl.firstName}}</td>
+    </tr>
+    <tr>
+        <td>Last Name:</td>
+        <td>{{ infCtrl.lastName }}</td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+        <td>{{ infCtrl.email }}</td>
+    </tr>
+    <tr>
+        <td>Phone:</td>
+        <td>{{ infCtrl.phone }}</td>
+    </tr>
+    <tr>
+        <td>Favorite Dish:</td>
+        <td>{{ infCtrl.favDishName }}</td>
+    </tr>
+    <tr>
+        <td>Favorite Dish Descr.:</td>
+        <td>{{ infCtrl.favDishDescription }}</td>
+    </tr>
+    <tr>
+        <td>Favorite Dish Image:</td>
+        <td>
+            <img src="https://expect05.herokuapp.com/images/{{infCtrl.favDishShortName}}.jpg" alt="{{infCtrl.favDishName}}">
+        </td>
+    </tr>
+</table>
